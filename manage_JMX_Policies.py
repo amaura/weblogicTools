@@ -1,7 +1,5 @@
 # vim: tabstop=8 expandtab shiftwidth=4 softtabstop=4
 # Functions
-#from weblogic.management.security.authentication import UserReaderMBean
-
 
 def usage():
     print "Usage : "+sys.argv[0]+" <url> <grant/revoke> <Group> <RW/R>"
@@ -94,14 +92,14 @@ bridgeMBeanMethods={
 }
 
 
+#DEBUG : password="welcome1"
+password= "".join(java.lang.System.console().readPassword("%s", ["Weblogic Password : "]))
 
-#password= "".join(java.lang.System.console().readPassword("%s", ["Weblogic Password : "]))
-password="welcome1"
 connect(username=user,url=url,password=password)
 
 securityRealm=cmo.getSecurityConfiguration().getDefaultRealm()
 atzr=securityRealm.lookupAuthorizer('XACMLAuthorizer')
 
 managePolicy(JMSDestMbeanMethods,permissions,atzr,group,action)
-managePolicy(bridgeMBeanMethods,permissions,atzr,group,action)
+# NOT WORKING : managePolicy(bridgeMBeanMethods,permissions,atzr,group,action)
  
