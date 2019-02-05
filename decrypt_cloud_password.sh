@@ -30,7 +30,7 @@ except:
     raise
 EOF
 
-java weblogic.WLST $TEMP_DECRYPT $DOMAIN_HOME $PASSWORD_ENC 2>&1 | grep -Po "(?<=--->).*"
+$WLST $TEMP_DECRYPT $DOMAIN_HOME $PASSWORD_ENC 2>&1 | grep -Po "(?<=--->).*"
 
 rm $TEMP_DECRYPT
 }
