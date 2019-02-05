@@ -1,10 +1,10 @@
 #!/bin/bash
 #Variables
 WLST=/u01/app/oracle/middleware/oracle_common/common/bin/wlst.sh
-pushd .
+
 #Source the local environment
-. /u01/data/domains/*/bin/setDomainEnv.sh
-popd
+. /u01/data/domains/*/bin/setDomainEnv.sh 2>&1 > /dev/null
+
 decrypt_wls_password()
 {
 PASSWORD_ENC=$(grep -Po "(?<=<node-manager-password-encrypted>).*(?=</node-manager-password-encrypted>)" $DOMAIN_HOME/config/config.xml)
