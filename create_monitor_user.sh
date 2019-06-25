@@ -73,7 +73,7 @@ if cmo.userExists('$MONITOR_USER'):
     cmo.addMemberToGroup('Monitors','$MONITOR_USER')
 else:
     print "User $MONITOR_USER does not exist"
-    cmo.createUser('$MONITOR_USER','$MONITOR_PASSWORD','Prometheus User')
+    cmo.createUser('$MONITOR_USER','$MONITOR_PASSWORD','Monitoring User')
     cmo.addMemberToGroup('Monitors','$MONITOR_USER')
     print "User $MONITOR_USER created and added to Monitors group"
 EOF
