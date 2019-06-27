@@ -1,7 +1,8 @@
 #!/bin/bash
 #Variables
 WLST=/u01/app/oracle/middleware/oracle_common/common/bin/wlst.sh
-export WLST_PROPERTIES='-Dweblogic.security.SSL.ignoreHostnameVerification=true -Dweblogic.security.CustomTrustKeyStoreType="JKS" -Dweblogic.security.TrustKeyStore=CustomTrust -Dweblogic.security.CustomTrustKeyStoreFileName="/u01/data/domains/keystores/trust.jks"'
+#Could be useful if SSL conf is changed
+#export WLST_PROPERTIES='-Dweblogic.security.SSL.ignoreHostnameVerification=true -Dweblogic.security.CustomTrustKeyStoreType="JKS" -Dweblogic.security.TrustKeyStore=CustomTrust -Dweblogic.security.CustomTrustKeyStoreFileName="/u01/data/domains/keystores/trust.jks"'
 
 
 message()
